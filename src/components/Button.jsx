@@ -20,13 +20,14 @@ export default function Button({
     </button>
   );
 
-  const renderLink = () => (
-    <a href={href} className={classes}>
-      <span className={spanClasses}>{children}</span>
-    </a>
-  );
+  // const renderLink = () => (
+  //   <a href={href} className={classes}>
+  //     <span className={spanClasses}>{children}</span>
+  //   </a>
+  // );
 
-  return href 
-  ? renderLink() 
-  : renderButton();
+  // return href 
+  // ? renderLink() 
+  // : renderButton();
+  return renderButton()
 }
