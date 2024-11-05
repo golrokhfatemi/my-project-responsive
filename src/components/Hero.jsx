@@ -5,6 +5,8 @@ import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constant";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
+import Generating from "./design/Generating";
+import Notification from "./Notification";
 
 export default function Hero() {
   const parallaxRef = useRef(null);
@@ -19,7 +21,7 @@ export default function Hero() {
       <div className="container relative " ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[4rem] md:mb-20 ">
           <h1 className="h1 mb-6">
-            Explore The Possibility Of AI Chatting With {" "}
+            Explore The Possibility Of AI Chatting With{" "}
             <span className="inline-block relative">
               BrainWave
               <img
@@ -52,6 +54,11 @@ export default function Hero() {
                   alt="AI"
                 />
                 <ScrollParallax isAbsolutelyPositioned>
+
+                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
+
+                </ScrollParallax>
+                <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
                     {heroIcons.map((icon, index) => (
                       <li className="p-5" key={index}>
@@ -60,9 +67,16 @@ export default function Hero() {
                     ))}
                   </ul>
                 </ScrollParallax>
+                <ScrollParallax isAbsolutelyPositioned>
+                  <Notification
+                  className="hidden absolute -right-[5.5rem] buttom-[11rem] w-[18rem] xl:flex"
+                  title="code generation"
+                  />
+
+                </ScrollParallax>
               </div>
             </div>
-            <Gradient/>
+            <Gradient />
           </div>
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104]">
             <img
@@ -73,9 +87,10 @@ export default function Hero() {
               alt="hero"
             />
           </div>
-          <BackgroundCircles/>
+          <BackgroundCircles />
         </div>
       </div>
+      <BottomLine />
     </Section>
   );
 }
